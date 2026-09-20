@@ -7,6 +7,8 @@ node_modules/
 /CLAUDE.md
 .next/
 out/
+.env.local
+.env.*.local
 playwright-report/
 test-results/
 *.tsbuildinfo

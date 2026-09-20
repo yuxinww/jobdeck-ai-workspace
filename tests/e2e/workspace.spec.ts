@@ -50,3 +50,10 @@ test("我的档案支持截图中的模块新增与编辑", async ({ page }) => 
   await expect(page.getByText("企业知识库问答项目：混合检索、Rerank 与答案引用。", { exact: true })).toBeVisible();
   await page.screenshot({ path: "reports/screenshots/06-profile-modules.png", fullPage: true });
 });
+
+test("左下角 AI 聊天按钮可以打开对话框", async ({ page }) => {
+  await page.goto("/board");
+  await page.getByRole("button", { name: "打开 AI 聊天" }).click();
+  await expect(page.getByRole("dialog", { name: "JobDeck AI 聊天" })).toBeVisible();
+  await expect(page.getByText("DeepSeek live · 服务端调用")).toBeVisible();
+});

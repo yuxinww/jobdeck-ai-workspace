@@ -3,7 +3,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { assertWorkspaceReferences, parsePersistedWorkspace } from "@/domain/schema";
 import { createSeedWorkspace } from "@/domain/seed";
-import type { ClosedReason, InterviewRound, JobCard, MockReport, MockSession, MockTurn, PrepTask, ProfileModule, ResumeVersion, Review, Stage, Transcript, TranscriptSegment, WorkspaceData } from "@/domain/types";
+import type { AiRun, ClosedReason, InterviewRound, JobCard, MockReport, MockSession, MockTurn, PrepTask, ProfileModule, ResumeVersion, Review, Stage, Transcript, TranscriptSegment, WorkspaceData } from "@/domain/types";
 import { stageLabel } from "@/domain/types";
 import type { MockTurnOutput } from "@/services/mock-ai";
 
@@ -19,6 +19,7 @@ type WorkspaceContextValue = {
   recordApplication: (cardId: string, input: { channel: string; submittedAt: string; resumeVersionId: string | null; notes: string }) => CommitResult;
   voidApplication: (applicationId: string, reason: string) => CommitResult;
   saveResumeVersion: (resumeId: string, contentMarkdown: string, origin?: ResumeVersion["origin"], evidenceIds?: string[]) => CommitResult;
+  saveAiRun: (run: AiRun) => CommitResult;
   restoreResumeVersion: (versionId: string) => CommitResult;
   addInterviewRound: (cardId: string, input: { kind: string; startsAt: string | null; resumeVersionId: string | null }) => CommitResult;
   togglePrepTask: (interviewId: string, taskId: string) => CommitResult;
@@ -39,8 +40,8 @@ const clone = <T,>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
 const deterministicNow = (domain: WorkspaceData) => new Date(BASE_TIME + domain.timeline.length * 60_000).toISOString();
 const nextId = (prefix: string, list: { id: string }[]) => `${prefix}-${String(list.length + 1).padStart(3, "0")}`;
 
-function event(domain: WorkspaceData, cardId: string, type: string, summary: string, payload?: Record<string, unknown>) {
-  domain.timeline.push({ id: nextId("event", domain.timeline), cardId, type, actor: "user", at: deterministicNow(domain), summary, payload });
+function event(domain: WorkspaceData, cardId: string, type: string, summary: string, payload?: Record<string, unknown>, actor: "user" | "mock_ai" | "system" = "user") {
+  domain.timeline.push({ id: nextId("event", domain.timeline), cardId, type, actor, at: deterministicNow(domain), summary, payload });
 }
 
 function withCard(domain: WorkspaceData, cardId: string, fn: (card: JobCard) => void) {
@@ -65,6 +66,8 @@ export function WorkspaceProvider({ children }: { children: React.ReactNode }) {
         assertWorkspaceReferences(parsed.domain);
         const restored = clone(parsed.domain);
         restored.profile.modules = restored.profile.modules ?? createSeedWorkspace().profile.modules;
+        restored.sources = restored.sources ?? [];
+        restored.aiRuns = restored.aiRuns ?? [];
         setData(restored);
         setRevision(parsed.revision);
       }
@@ -150,8 +153,16 @@ export function WorkspaceProvider({ children }: { children: React.ReactNode }) {
     if (!contentMarkdown.trim()) throw new Error("简历正文不能为空");
     const resume = draft.resumes.find((item) => item.id === resumeId); if (!resume) throw new Error("简历容器不存在");
     const versions = draft.resumeVersions.filter((item) => item.resumeId === resumeId); const id = nextId("version", draft.resumeVersions);
+    draft.aiRuns?.filter((run) => run.cardId === draft.cards.find((card) => card.resumeId === resumeId)?.id && run.status === "ready").forEach((run) => { run.status = "stale"; });
     draft.resumeVersions.push({ id, resumeId, number: versions.length + 1, origin, contentMarkdown, evidenceIds, createdAt: deterministicNow(draft) });
     resume.activeVersionId = id; resume.status = "ready"; const card = draft.cards.find((item) => item.resumeId === resumeId); if (card) { card.nextAction = "检查并确认岗位简历"; event(draft, card.id, "resume_saved", `保存岗位简历 v${versions.length + 1}`, { resumeId, versionId: id }); }
+  }), [commit]);
+
+  const saveAiRun = useCallback((run: AiRun) => commit((draft) => {
+    if (!draft.cards.some((card) => card.id === run.cardId)) throw new Error("AI 运行引用的岗位卡片不存在");
+    draft.aiRuns = [...(draft.aiRuns ?? []).filter((item) => item.runId !== run.runId), run];
+    const statusLabel = run.status === "ready" ? "完成" : run.status === "needs_input" ? "需要补充材料" : run.status === "blocked" ? "已阻止" : run.status === "stale" ? "已过期" : "失败";
+    event(draft, run.cardId, "ai_run_recorded", `DeepSeek ${run.action}：${statusLabel}`, { runId: run.runId, action: run.action, status: run.status, provider: run.provider, modelCalled: run.modelCalled }, "system");
   }), [commit]);
 
   const restoreResumeVersion = useCallback((versionId: string) => commit((draft) => {
@@ -212,11 +223,11 @@ export function WorkspaceProvider({ children }: { children: React.ReactNode }) {
     draft.reviews = draft.reviews.filter((item) => item.transcriptId !== review.transcriptId); draft.reviews.push({ ...review, transcriptRevision: transcript.revision ?? 1, stale: false }); const interview = draft.interviews.find((item) => item.id === transcript.interviewId); if (interview) event(draft, interview.cardId, "review_generated", "生成带片段引用的模拟复盘", { reviewId: review.id, transcriptId: review.transcriptId });
   }), [commit]);
 
-  const updateProfile = useCallback((patch: { cities: string[]; salaryMinK: number; salaryMaxK: number }) => commit((draft) => { draft.profile.preferences.cities = patch.cities; draft.profile.preferences.salaryMinK = patch.salaryMinK; draft.profile.preferences.salaryMaxK = patch.salaryMaxK; draft.profile.version += 1; draft.timeline.push({ id: nextId("event", draft.timeline), cardId: "profile", type: "profile_updated", actor: "user", at: deterministicNow(draft), summary: "更新档案偏好；旧岗位分析需重新生成" }); setNoticeState("档案已保存。已有匹配分析会标记为需重新生成。 "); }), [commit]);
-  const updateProfileModules = useCallback((modules: ProfileModule[]) => commit((draft) => { draft.profile.modules = modules; draft.profile.version += 1; draft.timeline.push({ id: nextId("event", draft.timeline), cardId: "profile", type: "profile_modules_updated", actor: "user", at: deterministicNow(draft), summary: "更新档案模块", payload: { moduleIds: modules.map((module) => module.id) } }); setNoticeState("档案模块已保存。 "); }), [commit]);
+  const updateProfile = useCallback((patch: { cities: string[]; salaryMinK: number; salaryMaxK: number }) => commit((draft) => { draft.profile.preferences.cities = patch.cities; draft.profile.preferences.salaryMinK = patch.salaryMinK; draft.profile.preferences.salaryMaxK = patch.salaryMaxK; draft.profile.version += 1; draft.aiRuns?.filter((run) => run.status === "ready").forEach((run) => { run.status = "stale"; }); draft.timeline.push({ id: nextId("event", draft.timeline), cardId: "profile", type: "profile_updated", actor: "user", at: deterministicNow(draft), summary: "更新档案偏好；旧岗位分析需重新生成" }); setNoticeState("档案已保存。已有匹配分析会标记为需重新生成。 "); }), [commit]);
+  const updateProfileModules = useCallback((modules: ProfileModule[]) => commit((draft) => { draft.profile.modules = modules; draft.profile.version += 1; draft.aiRuns?.filter((run) => run.status === "ready").forEach((run) => { run.status = "stale"; }); draft.timeline.push({ id: nextId("event", draft.timeline), cardId: "profile", type: "profile_modules_updated", actor: "user", at: deterministicNow(draft), summary: "更新档案模块", payload: { moduleIds: modules.map((module) => module.id) } }); setNoticeState("档案模块已保存。 "); }), [commit]);
   const updateInterviewPrep = useCallback((interviewId: string, prep: PrepTask[]) => commit((draft) => { const interview = draft.interviews.find((item) => item.id === interviewId); if (!interview) throw new Error("面试轮次不存在"); interview.prepTasks = prep; event(draft, interview.cardId, "prep_package_saved", "保存面试准备清单", { interviewId }); }), [commit]);
 
-  const value = useMemo<WorkspaceContextValue>(() => ({ data, revision, hydrated, notice, storageError, clearNotice: () => setNoticeState(null), resetDemo, addJobToBoard, moveCard, closeCard, recordApplication, voidApplication, saveResumeVersion, restoreResumeVersion, addInterviewRound, togglePrepTask, startMockSession, appendMockExchange, finishMockSession, importSampleTranscript, editTranscriptSegment, saveReview, updateProfile, updateProfileModules, updateInterviewPrep, setNotice: setNoticeState }), [data, revision, hydrated, notice, storageError, resetDemo, addJobToBoard, moveCard, closeCard, recordApplication, voidApplication, saveResumeVersion, restoreResumeVersion, addInterviewRound, togglePrepTask, startMockSession, appendMockExchange, finishMockSession, importSampleTranscript, editTranscriptSegment, saveReview, updateProfile, updateProfileModules, updateInterviewPrep]);
+  const value = useMemo<WorkspaceContextValue>(() => ({ data, revision, hydrated, notice, storageError, clearNotice: () => setNoticeState(null), resetDemo, addJobToBoard, moveCard, closeCard, recordApplication, voidApplication, saveResumeVersion, saveAiRun, restoreResumeVersion, addInterviewRound, togglePrepTask, startMockSession, appendMockExchange, finishMockSession, importSampleTranscript, editTranscriptSegment, saveReview, updateProfile, updateProfileModules, updateInterviewPrep, setNotice: setNoticeState }), [data, revision, hydrated, notice, storageError, resetDemo, addJobToBoard, moveCard, closeCard, recordApplication, voidApplication, saveResumeVersion, saveAiRun, restoreResumeVersion, addInterviewRound, togglePrepTask, startMockSession, appendMockExchange, finishMockSession, importSampleTranscript, editTranscriptSegment, saveReview, updateProfile, updateProfileModules, updateInterviewPrep]);
   return <WorkspaceContext.Provider value={value}>{children}</WorkspaceContext.Provider>;
 }
 

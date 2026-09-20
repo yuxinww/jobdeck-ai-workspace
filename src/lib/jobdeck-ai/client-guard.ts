@@ -1,0 +1,5 @@
+import type { AiAction } from "@/domain/types";
+
+export interface CoachClientSnapshot { requestId: string; workspaceId: string; action: AiAction; jd: unknown; candidate: unknown; resume?: unknown; originalText?: string; question?: unknown; answer?: unknown; instruction?: string; consent: boolean; }
+const key = (request: CoachClientSnapshot) => JSON.stringify({ workspaceId: request.workspaceId, action: request.action, jd: request.jd, candidate: request.candidate, resume: request.resume ?? null, originalText: request.originalText ?? "", question: request.question ?? null, answer: request.answer ?? null, instruction: request.instruction ?? "", consent: request.consent });
+export function shouldApplyResult(sentSnapshot: CoachClientSnapshot, currentInput: CoachClientSnapshot, latestRequestId: string, reply: { meta?: { requestId?: string; workspaceId?: string; action?: AiAction } } | null | undefined) { return !!reply?.meta && reply.meta.requestId === latestRequestId && sentSnapshot.requestId === latestRequestId && reply.meta.workspaceId === currentInput.workspaceId && reply.meta.action === currentInput.action && key(sentSnapshot) === key(currentInput); }

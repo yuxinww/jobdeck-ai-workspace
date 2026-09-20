@@ -31,7 +31,18 @@ jobs:
         run: npm ci
 
       - name: Build static site
-        run: npm run build
+        run: |
+          set -euo pipefail
+          api_backup="${RUNNER_TEMP}/jobdeck-api"
+          mv src/app/api "${api_backup}"
+          restore_api() {
+            if [ -d "${api_backup}" ]; then
+              mkdir -p src/app
+              mv "${api_backup}" src/app/api
+            fi
+          }
+          trap restore_api EXIT
+          npm run build
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3

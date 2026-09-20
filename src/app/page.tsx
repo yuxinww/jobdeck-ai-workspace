@@ -1,3 +1,3 @@
-import { WorkspaceApp } from "@/components/workspace-app";
+import { redirect } from "next/navigation";
 
-export default function Home() { return <WorkspaceApp initialView="board" />; }
+export default function Home() { redirect("/board"); }

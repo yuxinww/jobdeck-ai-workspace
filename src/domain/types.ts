@@ -2,8 +2,90 @@ export type Id = string;
 export type Stage = "new" | "saved" | "resume_prep" | "applied" | "interview_prep" | "closed";
 export type ClosedReason = "offer" | "rejected" | "withdrawn" | "position_closed";
 export type ResumeStatus = "not_started" | "draft" | "ready";
+export type AiAction = "analyze_job" | "rewrite_resume" | "prepare_interview" | "review_answer";
+export type AiRunStatus = "ready" | "needs_input" | "blocked" | "error" | "stale";
+export type AiGenerationMode = "live" | "seed";
 export type ProfileModuleKind = "work" | "education" | "publication" | "achievement" | "experience" | "intro" | "other" | "project" | "research" | "honor" | "skill" | "portfolio" | "custom";
 export interface ProfileModule { id: Id; kind: ProfileModuleKind; title: string; content: string; }
+
+export interface SourceSnapshot {
+  id: Id;
+  kind: "jd" | "candidate" | "resume" | "answer";
+  text: string;
+  revision: number;
+  isSample: boolean;
+  updatedAt: string;
+  supersededBy?: Id;
+}
+
+export interface AiRun {
+  runId: Id;
+  requestId: Id;
+  workspaceId: Id;
+  cardId: Id;
+  action: AiAction;
+  status: AiRunStatus;
+  mode: AiGenerationMode;
+  provider: "deepseek" | "seed";
+  promptVersion: string;
+  basis: Record<string, unknown>;
+  configuredModel?: string | null;
+  actualModel?: string | null;
+  completionId?: string | null;
+  usage?: Record<string, number> | null;
+  modelCalled: boolean;
+  attempts: number;
+  validation: string;
+  semanticReview: "PENDING" | "PASSED" | "REJECTED";
+  result?: unknown;
+  errorCode?: string;
+  errorMessage?: string;
+  startedAt: string;
+  finishedAt?: string;
+}
+
+export interface RequirementAnalysis {
+  id: Id;
+  jd_ref: { id: Id; quote: string };
+  level: "must" | "bonus" | "unknown";
+  candidate_refs: { id: Id; quote: string }[];
+  relation: "supported" | "partial" | "unknown" | "explicit_gap";
+  explanation: string;
+  follow_up: string;
+}
+
+export interface JobAnalysisResult { requirements: RequirementAnalysis[]; }
+export interface ResumeSuggestionResult {
+  suggestions: {
+    original_quote: string;
+    proposed_text: string;
+    why: string;
+    jd_refs: { id: Id; quote: string }[];
+    claims: { text: string; candidate_refs: { id: Id; quote: string }[] }[];
+  }[];
+}
+export interface InterviewQuestionResult {
+  questions: {
+    id: Id;
+    text: string;
+    jd_refs: { id: Id; quote: string }[];
+    candidate_refs: { id: Id; quote: string }[];
+    basis_type: "documented_experience" | "gap_or_unknown";
+    rationale: string;
+  }[];
+}
+export interface AnswerReviewResult {
+  findings: {
+    type: "strength" | "issue" | "missing" | "fact_conflict";
+    answer_quote: string | null;
+    comment: string;
+    improvement: string;
+    candidate_refs: { id: Id; quote: string }[];
+  }[];
+  improved_answer: string;
+  improvement_claims: { text: string; candidate_refs: { id: Id; quote: string }[] }[];
+  follow_up: string;
+}
 
 export interface Fact { id: Id; text: string; kind: "experience" | "project" | "metric" | "education" | "user_confirmed"; }
 export interface CandidateProfile {
@@ -24,11 +106,11 @@ export interface JobPosting {
   degree: string; employment: string; tags: string[]; focus: string; source: string;
   sourceUrl: string | null; sourceJobId: string; publishedAt: string; capturedAt: string;
   availability: "open" | "closed" | "unknown"; seedBatch: 0 | 1;
-  responsibilities: string[]; requirements: string[]; match: MatchResult; version?: number;
+  responsibilities: string[]; requirements: string[]; match: MatchResult; version?: number; jdText?: string; jdRevision?: number;
 }
 export interface JobCard { id: Id; candidateId: Id; jobId: Id; resumeId: Id; stage: Stage; rank: number; closedReason: ClosedReason | null; nextAction: string; createdAt: string; updatedAt: string; }
 export interface ResumeDocument { id: Id; cardId: Id; activeVersionId: Id | null; status: ResumeStatus; }
-export interface ResumeVersion { readonly id: Id; readonly resumeId: Id; readonly number: number; readonly origin: "mock_ai" | "user_edit" | "restored" | "external_snapshot"; readonly contentMarkdown: string; readonly evidenceIds: Id[]; readonly createdAt: string; }
+export interface ResumeVersion { readonly id: Id; readonly resumeId: Id; readonly number: number; readonly origin: "mock_ai" | "user_edit" | "restored" | "external_snapshot"; readonly contentMarkdown: string; readonly evidenceIds: Id[]; readonly createdAt: string; readonly basis?: Record<string, unknown>; readonly requiresHumanReview?: boolean; }
 export interface ApplicationRecord { id: Id; cardId: Id; submittedAt: string; channel: string; resumeVersionId: Id | null; resumeCapture: "snapshot" | "not_recorded"; notes: string; voidedAt?: string; voidReason?: string; }
 export interface PrepTask { id: Id; text: string; done: boolean; }
 export interface InterviewRound { id: Id; cardId: Id; round: number; kind: string; status: "unscheduled" | "scheduled" | "completed" | "cancelled"; startsAt: string | null; timezone: "Asia/Shanghai"; resumeVersionId: string | null; prepTasks: PrepTask[]; }
@@ -41,7 +123,7 @@ export interface CitedNote { text: string; segmentIds: Id[]; }
 export interface Review { id: Id; interviewId: Id; transcriptId: Id; isMock: true; strengths: CitedNote[]; improvements: CitedNote[]; nextTasks: string[]; notice: string; transcriptRevision?: number; stale?: boolean; }
 export interface TimelineEvent { id: Id; cardId: Id; type: string; actor: "user" | "mock_ai" | "system"; at: string; summary: string; operationId?: Id; payload?: Record<string, unknown>; }
 export interface MockQuestion { id: Id; topic: string; question: string; followup: string; expectedPoints: string[]; }
-export interface WorkspaceData { schemaVersion: 1; fixtureId: string; isMock: true; demoNow: string; demoTimezone: "Asia/Shanghai"; profile: CandidateProfile; masterResumeMarkdown: string; jobs: JobPosting[]; cards: JobCard[]; resumes: ResumeDocument[]; resumeVersions: ResumeVersion[]; applications: ApplicationRecord[]; interviews: InterviewRound[]; transcripts: Transcript[]; reviews: Review[]; timeline: TimelineEvent[]; mockQuestionBank: MockQuestion[]; mockSessions?: MockSession[]; }
+export interface WorkspaceData { schemaVersion: 1; fixtureId: string; isMock: true; demoNow: string; demoTimezone: "Asia/Shanghai"; profile: CandidateProfile; masterResumeMarkdown: string; jobs: JobPosting[]; cards: JobCard[]; resumes: ResumeDocument[]; resumeVersions: ResumeVersion[]; applications: ApplicationRecord[]; interviews: InterviewRound[]; transcripts: Transcript[]; reviews: Review[]; timeline: TimelineEvent[]; mockQuestionBank: MockQuestion[]; mockSessions?: MockSession[]; sources?: SourceSnapshot[]; aiRuns?: AiRun[]; }
 export interface PersistedWorkspace { schemaVersion: 1; fixtureId: string; revision: number; savedAt: string; domain: WorkspaceData; }
 
 export const STAGES: { id: Stage; label: string; hint: string }[] = [
