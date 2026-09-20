@@ -1,0 +1,1971 @@
+{
+  "schemaVersion": 1,
+  "fixtureId": "llm-app-engineer-v1",
+  "isMock": true,
+  "demoNow": "2026-09-20T10:00:00+08:00",
+  "demoTimezone": "Asia/Shanghai",
+  "profile": {
+    "id": "candidate-demo",
+    "isMock": true,
+    "version": 1,
+    "name": "林知远（虚构）",
+    "headline": "AI 大模型应用工程师",
+    "yearsOfExperience": 3,
+    "education": {
+      "degree": "本科",
+      "major": "计算机科学与技术",
+      "school": "示例大学（虚构）",
+      "start": "2019-09",
+      "end": "2023-06"
+    },
+    "preferences": {
+      "roles": [
+        "AI 大模型应用工程师",
+        "RAG 应用工程师",
+        "AI Agent 开发工程师"
+      ],
+      "cities": [
+        "深圳",
+        "广州",
+        "东莞"
+      ],
+      "remoteAllowed": true,
+      "salaryMinK": 22,
+      "salaryMaxK": 35,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "excluded": [
+        "纯销售",
+        "长期出差",
+        "基础模型预训练为主"
+      ]
+    },
+    "skills": [
+      "Python",
+      "FastAPI",
+      "RAG",
+      "混合检索",
+      "Rerank",
+      "Tool Calling",
+      "Prompt 设计",
+      "评估",
+      "Docker",
+      "SQL",
+      "Redis",
+      "Git"
+    ],
+    "gaps": [
+      "暂无 Kubernetes 生产集群经验",
+      "暂无大规模模型训练经历",
+      "高并发容量评估经验待补充"
+    ],
+    "facts": [
+      {
+        "id": "ev-work-backend",
+        "text": "2023.07—2025.06，在星桥软件（虚构）任 Python 后端开发工程师，参与 API、SQL 与 Redis 模块开发。",
+        "kind": "experience"
+      },
+      {
+        "id": "ev-work-ai",
+        "text": "2025.07 起，在青禾工具（虚构）任 AI 应用开发工程师，参与知识库问答与内部工单助手。",
+        "kind": "experience"
+      },
+      {
+        "id": "ev-rag-stack",
+        "text": "企业知识库问答项目：使用 Python、FastAPI、Qdrant，实现文档切分、BM25 与向量混合检索、Rerank 和答案引用。",
+        "kind": "project"
+      },
+      {
+        "id": "ev-rag-metric",
+        "text": "在项目内 180 条标注问题组成的离线评估集上，检索 Recall@5 从 68% 提升到 84%；仅为虚构演示指标，不代表线上生产效果。",
+        "kind": "metric"
+      },
+      {
+        "id": "ev-agent-tools",
+        "text": "内部工单助手项目：设计查询工单、检索知识库两个工具；增加参数校验、失败重试与敏感操作人工确认。",
+        "kind": "project"
+      },
+      {
+        "id": "ev-eval",
+        "text": "搭建 60 条回归样例，检查回答引用、拒答与工具选择行为；所有数字均为演示设定。",
+        "kind": "project"
+      },
+      {
+        "id": "ev-deploy",
+        "text": "使用 Docker Compose 在单机环境部署 API、向量检索和日志服务，未声称 Kubernetes 生产经验。",
+        "kind": "project"
+      },
+      {
+        "id": "ev-education",
+        "text": "2019.09—2023.06，示例大学（虚构），计算机科学与技术本科。",
+        "kind": "education"
+      }
+    ],
+    "contact": {
+      "email": "lin.zhiyuan@example.invalid",
+      "phone": "未填写（演示）"
+    }
+  },
+  "masterResumeMarkdown": "# 林知远（虚构）\nAI 大模型应用工程师｜3 年开发经验｜深圳 / 广州 / 东莞\n\n## 个人简介\n具备 Python 后端开发与大模型应用实践，参与企业知识库问答、工单助手与离线评估。\n\n## 项目经历\n### 企业知识库问答\n- 基于 Python、FastAPI 与 Qdrant 实现文档切分、混合检索、Rerank 和答案引用。\n- 在 180 条项目内离线评估样例上，Recall@5 从 68% 提升到 84%（虚构演示指标）。\n### 内部工单助手\n- 设计查询工单和检索知识库工具，加入参数校验、失败重试与敏感操作人工确认。\n### 部署与评估\n- 以 Docker Compose 部署单机服务；维护 60 条回归样例。\n\n## 教育\n示例大学（虚构）｜计算机科学与技术本科｜2019.09—2023.06\n\n> 本文全部个人信息、经历和指标仅供产品演示。\n",
+  "jobs": [
+    {
+      "id": "job-001",
+      "isMock": true,
+      "company": "澄空智能（虚构）",
+      "title": "AI 大模型应用工程师",
+      "city": "深圳",
+      "salaryMinK": 25,
+      "salaryMaxK": 35,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Python",
+        "RAG",
+        "FastAPI"
+      ],
+      "focus": "企业知识库与 AI 助手",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-001",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕企业知识库与 AI 助手设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Python、RAG、FastAPI。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 88,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-002",
+      "isMock": true,
+      "company": "知序科技（虚构）",
+      "title": "RAG 应用工程师",
+      "city": "广州",
+      "salaryMinK": 22,
+      "salaryMaxK": 32,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "混合检索",
+        "Rerank",
+        "评估"
+      ],
+      "focus": "检索质量与知识工程",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-002",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕检索质量与知识工程设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 混合检索、Rerank、评估。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 91,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-003",
+      "isMock": true,
+      "company": "星帆软件（虚构）",
+      "title": "AI Agent 开发工程师",
+      "city": "深圳",
+      "salaryMinK": 26,
+      "salaryMaxK": 38,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Tool Calling",
+        "Python",
+        "Docker"
+      ],
+      "focus": "工单自动化与工具编排",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-003",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕工单自动化与工具编排设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Tool Calling、Python、Docker。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 86,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-004",
+      "isMock": true,
+      "company": "简知数据（虚构）",
+      "title": "智能体应用工程师",
+      "city": "东莞",
+      "salaryMinK": 22,
+      "salaryMaxK": 30,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Python",
+        "SQL",
+        "RAG"
+      ],
+      "focus": "数据问答与业务集成",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-004",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕数据问答与业务集成设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Python、SQL、RAG。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 84,
+        "label": "可考虑",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-005",
+      "isMock": true,
+      "company": "知澜科技（虚构）",
+      "title": "AI 大模型应用工程师",
+      "city": "深圳",
+      "salaryMinK": 25,
+      "salaryMaxK": 35,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "RAG",
+        "Tool Calling",
+        "FastAPI"
+      ],
+      "focus": "企业知识库与业务助手",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-005",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕企业知识库与业务助手设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 RAG、Tool Calling、FastAPI。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 92,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-006",
+      "isMock": true,
+      "company": "墨川系统（虚构）",
+      "title": "企业 AI 应用工程师",
+      "city": "广州",
+      "salaryMinK": 24,
+      "salaryMaxK": 34,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "FastAPI",
+        "Docker",
+        "RAG"
+      ],
+      "focus": "API 集成与私有化交付",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-006",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕API 集成与私有化交付设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 FastAPI、Docker、RAG。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 85,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "Kubernetes 生产经验暂无证据"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-007",
+      "isMock": true,
+      "company": "青屿智能（虚构）",
+      "title": "RAG 工程师",
+      "city": "深圳",
+      "salaryMinK": 25,
+      "salaryMaxK": 36,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "混合检索",
+        "评估",
+        "Python"
+      ],
+      "focus": "文档理解与引用追踪",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-007",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕文档理解与引用追踪设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 混合检索、评估、Python。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 90,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-008",
+      "isMock": true,
+      "company": "行简科技（虚构）",
+      "title": "LLM 应用后端工程师",
+      "city": "广州",
+      "salaryMinK": 23,
+      "salaryMaxK": 33,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "FastAPI",
+        "Redis",
+        "SQL"
+      ],
+      "focus": "模型网关与应用服务",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-008",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕模型网关与应用服务设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 FastAPI、Redis、SQL。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 83,
+        "label": "可考虑",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-009",
+      "isMock": true,
+      "company": "栖木科技（虚构）",
+      "title": "AI Agent 应用工程师",
+      "city": "深圳",
+      "salaryMinK": 26,
+      "salaryMaxK": 36,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Tool Calling",
+        "RAG",
+        "评估"
+      ],
+      "focus": "企业内部工作流助手",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-009",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕企业内部工作流助手设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Tool Calling、RAG、评估。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 89,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-010",
+      "isMock": true,
+      "company": "白石数据（虚构）",
+      "title": "大模型应用工程师",
+      "city": "东莞",
+      "salaryMinK": 24,
+      "salaryMaxK": 32,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Python",
+        "Docker",
+        "评估"
+      ],
+      "focus": "文档智能与知识管理",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-010",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕文档智能与知识管理设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Python、Docker、评估。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 82,
+        "label": "可考虑",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-011",
+      "isMock": true,
+      "company": "观澜工具（虚构）",
+      "title": "AI 应用研发工程师",
+      "city": "深圳",
+      "salaryMinK": 27,
+      "salaryMaxK": 35,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Python",
+        "RAG",
+        "FastAPI"
+      ],
+      "focus": "内部知识助手",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-011",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕内部知识助手设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Python、RAG、FastAPI。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 87,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-012",
+      "isMock": true,
+      "company": "未央科技（虚构）",
+      "title": "高级 AI 平台工程师",
+      "city": "深圳",
+      "salaryMinK": 32,
+      "salaryMaxK": 45,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Kubernetes",
+        "高并发",
+        "Python"
+      ],
+      "focus": "多租户推理平台",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-012",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "closed",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕多租户推理平台设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Kubernetes、高并发、Python。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 63,
+        "label": "可考虑",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "Kubernetes 生产经验暂无证据"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-013",
+      "isMock": true,
+      "company": "若水软件（虚构）",
+      "title": "知识库应用工程师",
+      "city": "广州",
+      "salaryMinK": 22,
+      "salaryMaxK": 31,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "RAG",
+        "Python",
+        "Docker"
+      ],
+      "focus": "售后知识检索",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-013",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕售后知识检索设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 RAG、Python、Docker。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 88,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-014",
+      "isMock": true,
+      "company": "云杉协作（虚构）",
+      "title": "Agent 工作流工程师",
+      "city": "远程",
+      "salaryMinK": 24,
+      "salaryMaxK": 36,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Tool Calling",
+        "FastAPI",
+        "SQL"
+      ],
+      "focus": "协作工具与智能流程",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-014",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕协作工具与智能流程设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Tool Calling、FastAPI、SQL。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 85,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-015",
+      "isMock": true,
+      "company": "砺行研究院（虚构）",
+      "title": "基础模型研究工程师",
+      "city": "北京",
+      "salaryMinK": 40,
+      "salaryMaxK": 60,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "博士",
+      "employment": "全职",
+      "tags": [
+        "预训练",
+        "多机训练",
+        "论文"
+      ],
+      "focus": "博士与基础模型训练",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-015",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕博士与基础模型训练设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 预训练、多机训练、论文。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 31,
+        "label": "暂不推荐",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "存在明确条件冲突，请先核实硬性要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": [
+          "要求博士学历；示例档案为本科",
+          "工作城市不符合偏好",
+          "以基础模型预训练为主"
+        ]
+      }
+    },
+    {
+      "id": "job-016",
+      "isMock": true,
+      "company": "光尘云（虚构）",
+      "title": "AI 解决方案顾问",
+      "city": "深圳",
+      "salaryMinK": 22,
+      "salaryMaxK": 35,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "售前",
+        "销售",
+        "出差"
+      ],
+      "focus": "销售与出差为主",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-016",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕销售与出差为主设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 售前、销售、出差。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 45,
+        "label": "暂不推荐",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "存在明确条件冲突，请先核实硬性要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": [
+          "纯销售 / 长期出差与偏好冲突"
+        ]
+      }
+    },
+    {
+      "id": "job-017",
+      "isMock": true,
+      "company": "谷风智能（虚构）",
+      "title": "高级大模型平台工程师",
+      "city": "杭州",
+      "salaryMinK": 38,
+      "salaryMaxK": 55,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 7,
+      "experienceMaxYears": 10,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Kubernetes",
+        "高并发",
+        "推理优化"
+      ],
+      "focus": "七年以上平台工程经验",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-017",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕七年以上平台工程经验设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Kubernetes、高并发、推理优化。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 52,
+        "label": "暂不推荐",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "存在明确条件冲突，请先核实硬性要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "Kubernetes 生产经验暂无证据"
+        ],
+        "hardConflicts": [
+          "要求 7 年经验；示例档案为 3 年",
+          "工作城市不符合偏好"
+        ]
+      }
+    },
+    {
+      "id": "job-018",
+      "isMock": true,
+      "company": "泊舟科技（虚构）",
+      "title": "AI 应用开发工程师",
+      "city": "深圳",
+      "salaryMinK": null,
+      "salaryMaxK": null,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Python",
+        "RAG",
+        "FastAPI"
+      ],
+      "focus": "企业助理，薪资信息待确认",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-018",
+      "publishedAt": "2026-09-19T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 0,
+      "responsibilities": [
+        "围绕企业助理，薪资信息待确认设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Python、RAG、FastAPI。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 86,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 0.9,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例",
+          "薪资未披露，需要人工确认"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-019",
+      "isMock": true,
+      "company": "原点软件（虚构）",
+      "title": "RAG 应用开发工程师",
+      "city": "东莞",
+      "salaryMinK": 23,
+      "salaryMaxK": 32,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "RAG",
+        "Python",
+        "SQL"
+      ],
+      "focus": "模拟同步新增岗位",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-019",
+      "publishedAt": "2026-09-20T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 1,
+      "responsibilities": [
+        "围绕模拟同步新增岗位设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 RAG、Python、SQL。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 87,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    },
+    {
+      "id": "job-020",
+      "isMock": true,
+      "company": "书简科技（虚构）",
+      "title": "AI 助手开发工程师",
+      "city": "广州",
+      "salaryMinK": 24,
+      "salaryMaxK": 34,
+      "salaryMonths": null,
+      "currency": "CNY",
+      "salaryPeriod": "month",
+      "experienceMinYears": 2,
+      "experienceMaxYears": 5,
+      "degree": "本科",
+      "employment": "全职",
+      "tags": [
+        "Tool Calling",
+        "Docker",
+        "Python"
+      ],
+      "focus": "模拟同步新增岗位",
+      "source": "模拟公司招聘页",
+      "sourceUrl": null,
+      "sourceJobId": "mock-020",
+      "publishedAt": "2026-09-20T09:00:00+08:00",
+      "capturedAt": "2026-09-20T10:00:00+08:00",
+      "availability": "open",
+      "seedBatch": 1,
+      "responsibilities": [
+        "围绕模拟同步新增岗位设计并交付应用功能。",
+        "与产品和业务同事协作，维护可复现的离线评估与回归测试。",
+        "跟踪响应延迟、错误与成本，提供可解释的改进建议。"
+      ],
+      "requirements": [
+        "熟悉 Tool Calling、Docker、Python。",
+        "具备清晰的项目贡献与问题定位能力。",
+        "能够说明评估口径与系统边界。"
+      ],
+      "match": {
+        "index": 86,
+        "label": "建议优先查看",
+        "isMock": true,
+        "coverage": 1.0,
+        "reason": "示例档案的 RAG / Python / 工具调用经历可支撑本岗位的部分核心要求。",
+        "evidenceIds": [
+          "ev-rag-stack",
+          "ev-agent-tools",
+          "ev-deploy"
+        ],
+        "gaps": [
+          "需要补充端到端延迟与成本分析案例"
+        ],
+        "hardConflicts": []
+      }
+    }
+  ],
+  "cards": [
+    {
+      "id": "card-001",
+      "candidateId": "candidate-demo",
+      "jobId": "job-001",
+      "resumeId": "resume-001",
+      "stage": "new",
+      "rank": 1,
+      "closedReason": null,
+      "nextAction": "阅读推荐理由",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-002",
+      "candidateId": "candidate-demo",
+      "jobId": "job-002",
+      "resumeId": "resume-002",
+      "stage": "new",
+      "rank": 0,
+      "closedReason": null,
+      "nextAction": "阅读推荐理由",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-003",
+      "candidateId": "candidate-demo",
+      "jobId": "job-003",
+      "resumeId": "resume-003",
+      "stage": "saved",
+      "rank": 1,
+      "closedReason": null,
+      "nextAction": "生成岗位简历",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-004",
+      "candidateId": "candidate-demo",
+      "jobId": "job-004",
+      "resumeId": "resume-004",
+      "stage": "saved",
+      "rank": 0,
+      "closedReason": null,
+      "nextAction": "生成岗位简历",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-005",
+      "candidateId": "candidate-demo",
+      "jobId": "job-005",
+      "resumeId": "resume-005",
+      "stage": "resume_prep",
+      "rank": 1,
+      "closedReason": null,
+      "nextAction": "检查并修改简历",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-006",
+      "candidateId": "candidate-demo",
+      "jobId": "job-006",
+      "resumeId": "resume-006",
+      "stage": "resume_prep",
+      "rank": 0,
+      "closedReason": null,
+      "nextAction": "检查并修改简历",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-007",
+      "candidateId": "candidate-demo",
+      "jobId": "job-007",
+      "resumeId": "resume-007",
+      "stage": "applied",
+      "rank": 1,
+      "closedReason": null,
+      "nextAction": "等待回复 · 可手动跟进",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-008",
+      "candidateId": "candidate-demo",
+      "jobId": "job-008",
+      "resumeId": "resume-008",
+      "stage": "applied",
+      "rank": 0,
+      "closedReason": null,
+      "nextAction": "等待回复 · 可手动跟进",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-009",
+      "candidateId": "candidate-demo",
+      "jobId": "job-009",
+      "resumeId": "resume-009",
+      "stage": "interview_prep",
+      "rank": 1,
+      "closedReason": null,
+      "nextAction": "准备技术面试",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-010",
+      "candidateId": "candidate-demo",
+      "jobId": "job-010",
+      "resumeId": "resume-010",
+      "stage": "interview_prep",
+      "rank": 0,
+      "closedReason": null,
+      "nextAction": "准备技术面试",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-011",
+      "candidateId": "candidate-demo",
+      "jobId": "job-011",
+      "resumeId": "resume-011",
+      "stage": "closed",
+      "rank": 1,
+      "closedReason": "offer",
+      "nextAction": "已收到 Offer",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    },
+    {
+      "id": "card-012",
+      "candidateId": "candidate-demo",
+      "jobId": "job-012",
+      "resumeId": "resume-012",
+      "stage": "closed",
+      "rank": 0,
+      "closedReason": "rejected",
+      "nextAction": "复盘后归档",
+      "createdAt": "2026-09-15T09:00:00+08:00",
+      "updatedAt": "2026-09-20T10:00:00+08:00"
+    }
+  ],
+  "resumes": [
+    {
+      "id": "resume-001",
+      "cardId": "card-001",
+      "activeVersionId": null,
+      "status": "not_started"
+    },
+    {
+      "id": "resume-002",
+      "cardId": "card-002",
+      "activeVersionId": null,
+      "status": "not_started"
+    },
+    {
+      "id": "resume-003",
+      "cardId": "card-003",
+      "activeVersionId": null,
+      "status": "not_started"
+    },
+    {
+      "id": "resume-004",
+      "cardId": "card-004",
+      "activeVersionId": null,
+      "status": "not_started"
+    },
+    {
+      "id": "resume-005",
+      "cardId": "card-005",
+      "activeVersionId": "version-005-1",
+      "status": "draft"
+    },
+    {
+      "id": "resume-006",
+      "cardId": "card-006",
+      "activeVersionId": "version-006-1",
+      "status": "draft"
+    },
+    {
+      "id": "resume-007",
+      "cardId": "card-007",
+      "activeVersionId": "version-007-1",
+      "status": "ready"
+    },
+    {
+      "id": "resume-008",
+      "cardId": "card-008",
+      "activeVersionId": "version-008-1",
+      "status": "ready"
+    },
+    {
+      "id": "resume-009",
+      "cardId": "card-009",
+      "activeVersionId": "version-009-1",
+      "status": "ready"
+    },
+    {
+      "id": "resume-010",
+      "cardId": "card-010",
+      "activeVersionId": "version-010-1",
+      "status": "ready"
+    },
+    {
+      "id": "resume-011",
+      "cardId": "card-011",
+      "activeVersionId": "version-011-1",
+      "status": "ready"
+    },
+    {
+      "id": "resume-012",
+      "cardId": "card-012",
+      "activeVersionId": "version-012-1",
+      "status": "ready"
+    }
+  ],
+  "resumeVersions": [
+    {
+      "id": "version-005-1",
+      "resumeId": "resume-005",
+      "number": 1,
+      "origin": "mock_ai",
+      "contentMarkdown": "# 林知远（虚构）\nAI 大模型应用工程师｜3 年开发经验｜深圳 / 广州 / 东莞\n\n## 求职方向\nAI 大模型应用工程师｜知澜科技（虚构）\n\n## 个人简介\n具备 Python 后端开发与大模型应用实践，参与企业知识库问答、工单助手与离线评估。\n\n## 项目经历\n### 企业知识库问答\n- 基于 Python、FastAPI 与 Qdrant 实现文档切分、混合检索、Rerank 和答案引用。\n- 在 180 条项目内离线评估样例上，Recall@5 从 68% 提升到 84%（虚构演示指标）。\n### 内部工单助手\n- 设计查询工单和检索知识库工具，加入参数校验、失败重试与敏感操作人工确认。\n### 部署与评估\n- 以 Docker Compose 部署单机服务；维护 60 条回归样例。\n\n## 教育\n示例大学（虚构）｜计算机科学与技术本科｜2019.09—2023.06\n\n> 本文全部个人信息、经历和指标仅供产品演示。\n",
+      "evidenceIds": [
+        "ev-rag-stack",
+        "ev-rag-metric",
+        "ev-agent-tools",
+        "ev-eval",
+        "ev-deploy",
+        "ev-education"
+      ],
+      "createdAt": "2026-09-16T11:00:00+08:00"
+    },
+    {
+      "id": "version-006-1",
+      "resumeId": "resume-006",
+      "number": 1,
+      "origin": "mock_ai",
+      "contentMarkdown": "# 林知远（虚构）\nAI 大模型应用工程师｜3 年开发经验｜深圳 / 广州 / 东莞\n\n## 求职方向\n企业 AI 应用工程师｜墨川系统（虚构）\n\n## 个人简介\n具备 Python 后端开发与大模型应用实践，参与企业知识库问答、工单助手与离线评估。\n\n## 项目经历\n### 企业知识库问答\n- 基于 Python、FastAPI 与 Qdrant 实现文档切分、混合检索、Rerank 和答案引用。\n- 在 180 条项目内离线评估样例上，Recall@5 从 68% 提升到 84%（虚构演示指标）。\n### 内部工单助手\n- 设计查询工单和检索知识库工具，加入参数校验、失败重试与敏感操作人工确认。\n### 部署与评估\n- 以 Docker Compose 部署单机服务；维护 60 条回归样例。\n\n## 教育\n示例大学（虚构）｜计算机科学与技术本科｜2019.09—2023.06\n\n> 本文全部个人信息、经历和指标仅供产品演示。\n",
+      "evidenceIds": [
+        "ev-rag-stack",
+        "ev-rag-metric",
+        "ev-agent-tools",
+        "ev-eval",
+        "ev-deploy",
+        "ev-education"
+      ],
+      "createdAt": "2026-09-16T11:00:00+08:00"
+    },
+    {
+      "id": "version-007-1",
+      "resumeId": "resume-007",
+      "number": 1,
+      "origin": "mock_ai",
+      "contentMarkdown": "# 林知远（虚构）\nAI 大模型应用工程师｜3 年开发经验｜深圳 / 广州 / 东莞\n\n## 求职方向\nRAG 工程师｜青屿智能（虚构）\n\n## 个人简介\n具备 Python 后端开发与大模型应用实践，参与企业知识库问答、工单助手与离线评估。\n\n## 项目经历\n### 企业知识库问答\n- 基于 Python、FastAPI 与 Qdrant 实现文档切分、混合检索、Rerank 和答案引用。\n- 在 180 条项目内离线评估样例上，Recall@5 从 68% 提升到 84%（虚构演示指标）。\n### 内部工单助手\n- 设计查询工单和检索知识库工具，加入参数校验、失败重试与敏感操作人工确认。\n### 部署与评估\n- 以 Docker Compose 部署单机服务；维护 60 条回归样例。\n\n## 教育\n示例大学（虚构）｜计算机科学与技术本科｜2019.09—2023.06\n\n> 本文全部个人信息、经历和指标仅供产品演示。\n",
+      "evidenceIds": [
+        "ev-rag-stack",
+        "ev-rag-metric",
+        "ev-agent-tools",
+        "ev-eval",
+        "ev-deploy",
+        "ev-education"
+      ],
+      "createdAt": "2026-09-16T11:00:00+08:00"
+    },
+    {
+      "id": "version-008-1",
+      "resumeId": "resume-008",
+      "number": 1,
+      "origin": "mock_ai",
+      "contentMarkdown": "# 林知远（虚构）\nAI 大模型应用工程师｜3 年开发经验｜深圳 / 广州 / 东莞\n\n## 求职方向\nLLM 应用后端工程师｜行简科技（虚构）\n\n## 个人简介\n具备 Python 后端开发与大模型应用实践，参与企业知识库问答、工单助手与离线评估。\n\n## 项目经历\n### 企业知识库问答\n- 基于 Python、FastAPI 与 Qdrant 实现文档切分、混合检索、Rerank 和答案引用。\n- 在 180 条项目内离线评估样例上，Recall@5 从 68% 提升到 84%（虚构演示指标）。\n### 内部工单助手\n- 设计查询工单和检索知识库工具，加入参数校验、失败重试与敏感操作人工确认。\n### 部署与评估\n- 以 Docker Compose 部署单机服务；维护 60 条回归样例。\n\n## 教育\n示例大学（虚构）｜计算机科学与技术本科｜2019.09—2023.06\n\n> 本文全部个人信息、经历和指标仅供产品演示。\n",
+      "evidenceIds": [
+        "ev-rag-stack",
+        "ev-rag-metric",
+        "ev-agent-tools",
+        "ev-eval",
+        "ev-deploy",
+        "ev-education"
+      ],
+      "createdAt": "2026-09-16T11:00:00+08:00"
+    },
+    {
+      "id": "version-009-1",
+      "resumeId": "resume-009",
+      "number": 1,
+      "origin": "mock_ai",
+      "contentMarkdown": "# 林知远（虚构）\nAI 大模型应用工程师｜3 年开发经验｜深圳 / 广州 / 东莞\n\n## 求职方向\nAI Agent 应用工程师｜栖木科技（虚构）\n\n## 个人简介\n具备 Python 后端开发与大模型应用实践，参与企业知识库问答、工单助手与离线评估。\n\n## 项目经历\n### 企业知识库问答\n- 基于 Python、FastAPI 与 Qdrant 实现文档切分、混合检索、Rerank 和答案引用。\n- 在 180 条项目内离线评估样例上，Recall@5 从 68% 提升到 84%（虚构演示指标）。\n### 内部工单助手\n- 设计查询工单和检索知识库工具，加入参数校验、失败重试与敏感操作人工确认。\n### 部署与评估\n- 以 Docker Compose 部署单机服务；维护 60 条回归样例。\n\n## 教育\n示例大学（虚构）｜计算机科学与技术本科｜2019.09—2023.06\n\n> 本文全部个人信息、经历和指标仅供产品演示。\n",
+      "evidenceIds": [
+        "ev-rag-stack",
+        "ev-rag-metric",
+        "ev-agent-tools",
+        "ev-eval",
+        "ev-deploy",
+        "ev-education"
+      ],
+      "createdAt": "2026-09-16T11:00:00+08:00"
+    },
+    {
+      "id": "version-010-1",
+      "resumeId": "resume-010",
+      "number": 1,
+      "origin": "mock_ai",
+      "contentMarkdown": "# 林知远（虚构）\nAI 大模型应用工程师｜3 年开发经验｜深圳 / 广州 / 东莞\n\n## 求职方向\n大模型应用工程师｜白石数据（虚构）\n\n## 个人简介\n具备 Python 后端开发与大模型应用实践，参与企业知识库问答、工单助手与离线评估。\n\n## 项目经历\n### 企业知识库问答\n- 基于 Python、FastAPI 与 Qdrant 实现文档切分、混合检索、Rerank 和答案引用。\n- 在 180 条项目内离线评估样例上，Recall@5 从 68% 提升到 84%（虚构演示指标）。\n### 内部工单助手\n- 设计查询工单和检索知识库工具，加入参数校验、失败重试与敏感操作人工确认。\n### 部署与评估\n- 以 Docker Compose 部署单机服务；维护 60 条回归样例。\n\n## 教育\n示例大学（虚构）｜计算机科学与技术本科｜2019.09—2023.06\n\n> 本文全部个人信息、经历和指标仅供产品演示。\n",
+      "evidenceIds": [
+        "ev-rag-stack",
+        "ev-rag-metric",
+        "ev-agent-tools",
+        "ev-eval",
+        "ev-deploy",
+        "ev-education"
+      ],
+      "createdAt": "2026-09-16T11:00:00+08:00"
+    },
+    {
+      "id": "version-011-1",
+      "resumeId": "resume-011",
+      "number": 1,
+      "origin": "mock_ai",
+      "contentMarkdown": "# 林知远（虚构）\nAI 大模型应用工程师｜3 年开发经验｜深圳 / 广州 / 东莞\n\n## 求职方向\nAI 应用研发工程师｜观澜工具（虚构）\n\n## 个人简介\n具备 Python 后端开发与大模型应用实践，参与企业知识库问答、工单助手与离线评估。\n\n## 项目经历\n### 企业知识库问答\n- 基于 Python、FastAPI 与 Qdrant 实现文档切分、混合检索、Rerank 和答案引用。\n- 在 180 条项目内离线评估样例上，Recall@5 从 68% 提升到 84%（虚构演示指标）。\n### 内部工单助手\n- 设计查询工单和检索知识库工具，加入参数校验、失败重试与敏感操作人工确认。\n### 部署与评估\n- 以 Docker Compose 部署单机服务；维护 60 条回归样例。\n\n## 教育\n示例大学（虚构）｜计算机科学与技术本科｜2019.09—2023.06\n\n> 本文全部个人信息、经历和指标仅供产品演示。\n",
+      "evidenceIds": [
+        "ev-rag-stack",
+        "ev-rag-metric",
+        "ev-agent-tools",
+        "ev-eval",
+        "ev-deploy",
+        "ev-education"
+      ],
+      "createdAt": "2026-09-16T11:00:00+08:00"
+    },
+    {
+      "id": "version-012-1",
+      "resumeId": "resume-012",
+      "number": 1,
+      "origin": "mock_ai",
+      "contentMarkdown": "# 林知远（虚构）\nAI 大模型应用工程师｜3 年开发经验｜深圳 / 广州 / 东莞\n\n## 求职方向\n高级 AI 平台工程师｜未央科技（虚构）\n\n## 个人简介\n具备 Python 后端开发与大模型应用实践，参与企业知识库问答、工单助手与离线评估。\n\n## 项目经历\n### 企业知识库问答\n- 基于 Python、FastAPI 与 Qdrant 实现文档切分、混合检索、Rerank 和答案引用。\n- 在 180 条项目内离线评估样例上，Recall@5 从 68% 提升到 84%（虚构演示指标）。\n### 内部工单助手\n- 设计查询工单和检索知识库工具，加入参数校验、失败重试与敏感操作人工确认。\n### 部署与评估\n- 以 Docker Compose 部署单机服务；维护 60 条回归样例。\n\n## 教育\n示例大学（虚构）｜计算机科学与技术本科｜2019.09—2023.06\n\n> 本文全部个人信息、经历和指标仅供产品演示。\n",
+      "evidenceIds": [
+        "ev-rag-stack",
+        "ev-rag-metric",
+        "ev-agent-tools",
+        "ev-eval",
+        "ev-deploy",
+        "ev-education"
+      ],
+      "createdAt": "2026-09-16T11:00:00+08:00"
+    }
+  ],
+  "applications": [
+    {
+      "id": "app-007",
+      "cardId": "card-007",
+      "submittedAt": "2026-09-17T10:00:00+08:00",
+      "channel": "手动记录（演示）",
+      "resumeVersionId": "version-007-1",
+      "resumeCapture": "snapshot",
+      "notes": "用户已在外部完成投递，本系统仅记录。"
+    },
+    {
+      "id": "app-008",
+      "cardId": "card-008",
+      "submittedAt": "2026-09-17T10:00:00+08:00",
+      "channel": "手动记录（演示）",
+      "resumeVersionId": "version-008-1",
+      "resumeCapture": "snapshot",
+      "notes": "用户已在外部完成投递，本系统仅记录。"
+    },
+    {
+      "id": "app-009",
+      "cardId": "card-009",
+      "submittedAt": "2026-09-17T10:00:00+08:00",
+      "channel": "手动记录（演示）",
+      "resumeVersionId": "version-009-1",
+      "resumeCapture": "snapshot",
+      "notes": "用户已在外部完成投递，本系统仅记录。"
+    },
+    {
+      "id": "app-010",
+      "cardId": "card-010",
+      "submittedAt": "2026-09-17T10:00:00+08:00",
+      "channel": "手动记录（演示）",
+      "resumeVersionId": "version-010-1",
+      "resumeCapture": "snapshot",
+      "notes": "用户已在外部完成投递，本系统仅记录。"
+    },
+    {
+      "id": "app-011",
+      "cardId": "card-011",
+      "submittedAt": "2026-09-17T10:00:00+08:00",
+      "channel": "手动记录（演示）",
+      "resumeVersionId": "version-011-1",
+      "resumeCapture": "snapshot",
+      "notes": "用户已在外部完成投递，本系统仅记录。"
+    },
+    {
+      "id": "app-012",
+      "cardId": "card-012",
+      "submittedAt": "2026-09-17T10:00:00+08:00",
+      "channel": "手动记录（演示）",
+      "resumeVersionId": "version-012-1",
+      "resumeCapture": "snapshot",
+      "notes": "用户已在外部完成投递，本系统仅记录。"
+    }
+  ],
+  "interviews": [
+    {
+      "id": "interview-009-1",
+      "cardId": "card-009",
+      "round": 1,
+      "kind": "技术一面",
+      "status": "scheduled",
+      "startsAt": "2026-09-22T14:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "resumeVersionId": "version-009-1",
+      "prepTasks": [
+        {
+          "id": "prep-1",
+          "text": "梳理工单 Agent 的工具权限与失败处理",
+          "done": true
+        },
+        {
+          "id": "prep-2",
+          "text": "复习 RAG 评估口径与引用可靠性",
+          "done": true
+        },
+        {
+          "id": "prep-3",
+          "text": "准备延迟与成本优化案例",
+          "done": false
+        },
+        {
+          "id": "prep-4",
+          "text": "完成一次技术模拟面试",
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "interview-010-1",
+      "cardId": "card-010",
+      "round": 1,
+      "kind": "技术一面",
+      "status": "completed",
+      "startsAt": "2026-09-19T15:00:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "resumeVersionId": "version-010-1",
+      "prepTasks": [
+        {
+          "id": "prep-b1",
+          "text": "介绍知识库项目",
+          "done": true
+        }
+      ]
+    }
+  ],
+  "transcripts": [
+    {
+      "id": "transcript-010-1",
+      "interviewId": "interview-010-1",
+      "isMock": true,
+      "kind": "sample_transcript",
+      "durationSeconds": 420,
+      "segments": [
+        {
+          "id": "seg-1",
+          "startSec": 0,
+          "endSec": 22,
+          "speaker": "interviewer",
+          "text": "你的知识库项目如何判断检索效果确实变好了？"
+        },
+        {
+          "id": "seg-2",
+          "startSec": 23,
+          "endSec": 72,
+          "speaker": "candidate",
+          "text": "我们建立了 180 条项目内标注问题，比较 Recall@5，从 68% 提升到 84%。这个是离线检索指标，不等于最终答案正确率。"
+        },
+        {
+          "id": "seg-3",
+          "startSec": 73,
+          "endSec": 95,
+          "speaker": "interviewer",
+          "text": "如果检索返回了不同权限用户不能看的文档，你会怎么处理？"
+        },
+        {
+          "id": "seg-4",
+          "startSec": 96,
+          "endSec": 135,
+          "speaker": "candidate",
+          "text": "我会先在返回答案前做过滤。目前这个示例项目没有实现完整的多租户权限，我需要进一步考虑检索前过滤和引用泄露。"
+        },
+        {
+          "id": "seg-5",
+          "startSec": 136,
+          "endSec": 154,
+          "speaker": "interviewer",
+          "text": "工具执行失败后，Agent 能一直重试吗？"
+        },
+        {
+          "id": "seg-6",
+          "startSec": 155,
+          "endSec": 205,
+          "speaker": "candidate",
+          "text": "不能无限重试，需要上限、超时和人工接管；有写操作时还要考虑幂等和重复执行。"
+        },
+        {
+          "id": "seg-7",
+          "startSec": 206,
+          "endSec": 226,
+          "speaker": "interviewer",
+          "text": "怎样定位响应延迟主要发生在哪个环节？"
+        },
+        {
+          "id": "seg-8",
+          "startSec": 227,
+          "endSec": 274,
+          "speaker": "candidate",
+          "text": "我会记录检索和模型生成的耗时，但是还没有完整统计 p95 和首 token 延迟。"
+        }
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "id": "review-010-1",
+      "interviewId": "interview-010-1",
+      "transcriptId": "transcript-010-1",
+      "isMock": true,
+      "strengths": [
+        {
+          "text": "能区分离线检索指标与答案质量，交代评估样本规模。",
+          "segmentIds": [
+            "seg-2"
+          ]
+        },
+        {
+          "text": "提及重试上限、人工接管和写操作幂等。",
+          "segmentIds": [
+            "seg-6"
+          ]
+        }
+      ],
+      "improvements": [
+        {
+          "text": "补充检索前权限过滤与引用泄露的分析。",
+          "segmentIds": [
+            "seg-4"
+          ]
+        },
+        {
+          "text": "补充 TTFT、p95 与分段 trace 的测量方案；这不是已有经历。",
+          "segmentIds": [
+            "seg-8"
+          ]
+        }
+      ],
+      "nextTasks": [
+        "演练一个带权限控制的 RAG 设计题",
+        "整理从检索到生成的延迟分解方法"
+      ],
+      "notice": "仅基于样例文字复盘，不预测录用概率，不推断面试官心理。"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "evt-001-created",
+      "cardId": "card-001",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-002-created",
+      "cardId": "card-002",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-003-created",
+      "cardId": "card-003",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-004-created",
+      "cardId": "card-004",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-005-created",
+      "cardId": "card-005",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-006-created",
+      "cardId": "card-006",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-007-created",
+      "cardId": "card-007",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-007-applied",
+      "cardId": "card-007",
+      "type": "application_recorded",
+      "actor": "user",
+      "at": "2026-09-17T10:00:00+08:00",
+      "summary": "记录手动投递；关联简历 v1"
+    },
+    {
+      "id": "evt-008-created",
+      "cardId": "card-008",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-008-applied",
+      "cardId": "card-008",
+      "type": "application_recorded",
+      "actor": "user",
+      "at": "2026-09-17T10:00:00+08:00",
+      "summary": "记录手动投递；关联简历 v1"
+    },
+    {
+      "id": "evt-009-created",
+      "cardId": "card-009",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-009-applied",
+      "cardId": "card-009",
+      "type": "application_recorded",
+      "actor": "user",
+      "at": "2026-09-17T10:00:00+08:00",
+      "summary": "记录手动投递；关联简历 v1"
+    },
+    {
+      "id": "evt-010-created",
+      "cardId": "card-010",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-010-applied",
+      "cardId": "card-010",
+      "type": "application_recorded",
+      "actor": "user",
+      "at": "2026-09-17T10:00:00+08:00",
+      "summary": "记录手动投递；关联简历 v1"
+    },
+    {
+      "id": "evt-011-created",
+      "cardId": "card-011",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-011-applied",
+      "cardId": "card-011",
+      "type": "application_recorded",
+      "actor": "user",
+      "at": "2026-09-17T10:00:00+08:00",
+      "summary": "记录手动投递；关联简历 v1"
+    },
+    {
+      "id": "evt-012-created",
+      "cardId": "card-012",
+      "type": "card_created",
+      "actor": "user",
+      "at": "2026-09-15T09:00:00+08:00",
+      "summary": "从模拟岗位池加入看板"
+    },
+    {
+      "id": "evt-012-applied",
+      "cardId": "card-012",
+      "type": "application_recorded",
+      "actor": "user",
+      "at": "2026-09-17T10:00:00+08:00",
+      "summary": "记录手动投递；关联简历 v1"
+    }
+  ],
+  "mockQuestionBank": [
+    {
+      "id": "q-1",
+      "topic": "RAG",
+      "question": "请介绍你的知识库问答项目，并区分检索指标和答案质量指标。",
+      "followup": "请具体说明评估样本如何选取，哪些失败样例没有被平均值体现？",
+      "expectedPoints": [
+        "样本集",
+        "Recall@5",
+        "答案正确性",
+        "引用"
+      ]
+    },
+    {
+      "id": "q-2",
+      "topic": "Tool Calling",
+      "question": "工单助手调用工具失败时，你如何设计重试、幂等与人工接管？",
+      "followup": "如果工具已经执行成功，但客户端超时了，再重试会发生什么？",
+      "expectedPoints": [
+        "超时",
+        "幂等",
+        "重试上限",
+        "人工确认"
+      ]
+    },
+    {
+      "id": "q-3",
+      "topic": "Engineering",
+      "question": "如何分解大模型应用的延迟与成本，并选择优先优化的环节？",
+      "followup": "你会记录哪些指标来区分检索慢和生成慢？",
+      "expectedPoints": [
+        "检索耗时",
+        "TTFT",
+        "p95",
+        "token"
+      ]
+    }
+  ]
+}
